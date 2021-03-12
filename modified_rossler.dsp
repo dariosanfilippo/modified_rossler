@@ -7,7 +7,9 @@ declare copyright "Copyright (C) 2021 Dario Sanfilippo
 declare version "1.1";
 declare license "GPL v3.0 license";
 
-rossler(l, a, b, c, dt, x_0, y_0, z_0) = x_level(x * out / l) , y_level(y * out / l) , z_level(z * out / l)
+rossler(l, a, b, c, dt, x_0, y_0, z_0) =    x_level(out * (x / l)) , 
+                                            y_level(out * (y / l)) , 
+                                            z_level(out * (z / l))
     letrec {
         'x = fi.highpass(1, 10, tanh(l, (x_0 + x + (-y - z) * dt)));
         'y = fi.highpass(1, 10, tanh(l, (y_0 + y + (x + a * y) * dt)));
