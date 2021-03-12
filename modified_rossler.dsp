@@ -50,4 +50,4 @@ limit = global_group(
 out = global_group(hslider("[9]Output scaling[scale:exp]", 0, 0, 1, .000001) : 
     smooth);
 
-process(x1, x2, x3) = rossler(limit, a, b, c, dt, input(x1), input(x2), input(x3)) :> _ <: /(3) , /(3);
+process(x1, x2, x3) = rossler(limit, a, b, c, dt, input(x1), input(x2), input(x3));
